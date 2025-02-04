@@ -37,4 +37,4 @@ out/
 .vscode/
 
 application-sensitive.properties
-*.env
+.env
