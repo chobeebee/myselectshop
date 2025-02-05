@@ -44,4 +44,14 @@ public class ProductController {
         // 응답 보내기
         return productService.getProducts(userDetails.getUser(),  page-1, size, sortBy, isAsc);
     }
+
+    // 상품에 폴더 추가
+    @PostMapping("/products/{productId}/folder")
+    public void addFolder(
+            @PathVariable(name = "productId") Long productId,
+            @RequestParam(name = "folderId") Long folderId,
+            @AuthenticationPrincipal UserDetailsImpl userDetails
+    ) {
+        productService.addFolder(productId, folderId, userDetails.getUser());
+    }
 }
