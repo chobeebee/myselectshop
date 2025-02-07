@@ -4,7 +4,7 @@ import com.sparta.myselectshop.dto.ProductMypriceRequestDto;
 import com.sparta.myselectshop.dto.ProductRequestDto;
 import com.sparta.myselectshop.entity.User;
 import com.sparta.myselectshop.entity.Product;
-import com.sparta.myselectshop.naver.dto.ProductResponseDto;
+import com.sparta.myselectshop.dto.ProductResponseDto;
 import com.sparta.myselectshop.repository.FolderRepository;
 import com.sparta.myselectshop.repository.ProductFolderRepository;
 import com.sparta.myselectshop.repository.ProductRepository;
