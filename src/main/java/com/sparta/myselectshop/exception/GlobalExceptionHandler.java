@@ -28,4 +28,28 @@ public class GlobalExceptionHandler {
                 HttpStatus.BAD_REQUEST
         );
     }
+
+    // nullPointerException
+    @ExceptionHandler({NullPointerException.class})
+    public ResponseEntity<RestApiException> nullPointerExceptionHandler(NullPointerException ex) {
+        RestApiException restApiException = new RestApiException(ex.getMessage(), HttpStatus.NOT_FOUND.value());
+        return new ResponseEntity<>(
+                // HTTP body
+                restApiException,
+                // HTTP status code
+                HttpStatus.NOT_FOUND
+        );
+    }
+
+    //직접 Custom한 Exception
+    @ExceptionHandler({ProductNotFoundException.class})
+    public ResponseEntity<RestApiException> notFoundProductExceptionHandler(ProductNotFoundException ex) {
+        RestApiException restApiException = new RestApiException(ex.getMessage(), HttpStatus.NOT_FOUND.value());
+        return new ResponseEntity<>(
+                // HTTP body
+                restApiException,
+                // HTTP status code
+                HttpStatus.NOT_FOUND
+        );
+    }
 }
